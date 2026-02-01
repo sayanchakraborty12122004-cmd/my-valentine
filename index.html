@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Imran</title>
+    <title>Truth Check for Imran</title>
     <style>
         /* --- CSS STYLES --- */
         :root {
-            --primary-color: #ff4d6d;
-            --bg-color: #ffe5ec;
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --text-color: #590d22;
+            --primary-color: #d90429;
+            --bg-color: #2b2d42;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --text-color: #2b2d42;
         }
 
         body {
@@ -20,9 +20,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            /* Dark/Heartbreak Theme Background */
+            background: linear-gradient(135deg, #2b2d42 0%, #8d99ae 100%);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
+            position: relative;
         }
 
         .container {
@@ -30,8 +32,8 @@
             background: var(--glass-bg);
             padding: 3rem;
             border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.18);
             max-width: 90%;
             width: 400px;
@@ -42,31 +44,29 @@
         h1 {
             color: var(--text-color);
             margin-bottom: 0.5rem;
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         p {
             color: #4a4a4a;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             font-weight: bold;
         }
 
-        .gif-area {
-            margin-bottom: 1.5rem;
-        }
-
         .gif-area img {
-            width: 150px;
+            width: 100%;
+            max-width: 200px;
             border-radius: 15px;
+            margin-bottom: 20px;
         }
 
         .btn-container {
             display: flex;
             justify-content: center;
             gap: 20px;
-            position: relative; /* Essential for button movement */
-            height: 60px; /* Reserve space */
+            position: relative;
+            height: 60px; 
         }
 
         .btn {
@@ -77,48 +77,60 @@
             border: none;
             font-weight: bold;
             transition: transform 0.2s;
+            z-index: 100;
         }
 
         .btn-yes {
             background-color: #2dc653;
             color: white;
             box-shadow: 0 4px 15px rgba(45, 198, 83, 0.4);
+            position: relative; /* Becomes absolute when running */
+            transition: all 0.2s ease;
         }
 
         .btn-no {
-            background-color: #ff0000;
+            background-color: #d90429;
             color: white;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
-            position: relative; /* Starts relative, becomes absolute when moving */
-            transition: all 0.3s ease; /* Smooth glide */
+            box-shadow: 0 4px 15px rgba(217, 4, 41, 0.4);
         }
 
-        /* Message shown after clicking Yes */
-        .success-message {
+        /* Message shown after clicking No */
+        .result-message {
             display: none;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            margin-top: 20px;
+            animation: fadeIn 0.5s ease-in;
         }
 
-        @keyframes popIn {
-            0% { transform: scale(0); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+        .result-message h2 {
+            color: #d90429;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+        
+        .result-message p {
+            font-size: 1rem;
+            color: #555;
+            font-style: italic;
         }
 
-        /* Background floating particles */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Floating Broken Hearts Background */
         .particle {
             position: absolute;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
+            font-size: 1.5rem;
             z-index: 1;
-            animation: float 20s infinite linear;
+            animation: float 15s infinite linear;
+            opacity: 0.3;
         }
 
         @keyframes float {
-            0% { transform: translateY(100vh) scale(0); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-100px) scale(1); opacity: 0; }
+            0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.5; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
         }
     </style>
 </head>
@@ -129,88 +141,77 @@
     <div class="container">
         <div id="game-content">
             <div class="gif-area">
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGIwZGI1/26BRv0ThflsKCqM6s/giphy.gif" alt="Cute animation">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z5Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5/26BRL7YrutHKsHtjk/giphy.gif" alt="Thinking GIF">
             </div>
 
-            <h1>Hey Imran! 👋</h1>
-            <p>Do you consider me as your friend?</p>
+            <h1>Imran... 💔</h1>
+            <p>Do you still have feelings for your ex?? 😭</p>
             
             <div class="btn-container">
-                <button class="btn btn-yes" onclick="sayYes()">YES</button>
-                <button class="btn btn-no" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">NO</button>
+                <button class="btn btn-yes" id="runBtn" onmouseover="moveButton()" onclick="moveButton()">YES</button>
+                
+                <button class="btn btn-no" onclick="sayNo()">NO</button>
             </div>
         </div>
 
-        <div id="success" class="success-message">
-            <h2>Yay! I knew it! 🎉</h2>
-            <p>Best friends forever! (You didn't have a choice anyway 😜)</p>
-            <img src="https://media.giphy.com/media/l1ughbsd9qXz2s9SC/giphy.gif" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+        <div id="result" class="result-message">
+            <h2>Such a lie! 🤥</h2>
+            <p>"You still love your ex, you still have feelings for her!"</p>
+            <p style="font-size: 0.9rem; color: #888;">(Be honest to yourself 😉)</p>
+            
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZm1lZm1lZm1lZm1lZm1lZm1lZm1lZm1lZm1lZm1lZm1l/3o85xnoIXebk3xYx4Q/giphy.gif" style="width: 100%; border-radius: 10px; margin-top: 15px;">
         </div>
     </div>
 
     <script>
         // --- JAVASCRIPT LOGIC ---
 
+        // Function to make the YES button run away
         function moveButton() {
-            const noBtn = document.getElementById('noBtn');
-            const container = document.querySelector('.container');
+            const btn = document.getElementById('runBtn');
             
             // Get window dimensions
-            const maxX = window.innerWidth - noBtn.offsetWidth - 20;
-            const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+            const maxX = window.innerWidth - btn.offsetWidth - 50;
+            const maxY = window.innerHeight - btn.offsetHeight - 50;
 
             // Generate random positions
             const randomX = Math.random() * maxX;
             const randomY = Math.random() * maxY;
 
             // Apply new position
-            noBtn.style.position = 'fixed'; // Breaks it out of the layout
-            noBtn.style.left = randomX + 'px';
-            noBtn.style.top = randomY + 'px';
+            btn.style.position = 'fixed'; 
+            btn.style.left = randomX + 'px';
+            btn.style.top = randomY + 'px';
         }
 
-        function sayYes() {
-            // Hide game, show success
+        // Function when clicking NO
+        function sayNo() {
+            // Hide game, show result
             document.getElementById('game-content').style.display = 'none';
-            document.getElementById('success').style.display = 'block';
+            document.getElementById('result').style.display = 'block';
             
-            // Launch confetti effect
-            createConfetti();
+            // Create broken heart rain
+            createBrokenHearts();
         }
 
-        // Background Particles
-        function createParticles() {
+        // Background Broken Hearts
+        function createBrokenHearts() {
             const body = document.getElementById('particles');
-            for (let i = 0; i < 30; i++) {
+            const symbols = ['💔', '🥀', '😢', '💔'];
+            
+            for (let i = 0; i < 25; i++) {
                 let p = document.createElement('div');
                 p.className = 'particle';
-                p.style.width = Math.random() * 20 + 'px';
-                p.style.height = p.style.width;
+                p.innerText = symbols[Math.floor(Math.random() * symbols.length)];
                 p.style.left = Math.random() * 100 + 'vw';
                 p.style.animationDuration = Math.random() * 10 + 10 + 's';
-                p.style.animationDelay = Math.random() * 5 + 's';
+                p.style.fontSize = Math.random() * 20 + 20 + 'px';
                 body.appendChild(p);
             }
         }
-        
-        // Simple confetti creator
-        function createConfetti() {
-            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff'];
-            for (let i = 0; i < 100; i++) {
-                let conf = document.createElement('div');
-                conf.style.position = 'fixed';
-                conf.style.left = Math.random() * 100 + 'vw';
-                conf.style.top = '-10px';
-                conf.style.width = '10px';
-                conf.style.height = '10px';
-                conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                conf.style.zIndex = '1000';
-                conf.style.animation = `float ${Math.random() * 3 + 2}s linear forwards`;
-                document.body.appendChild(conf);
-            }
-        }
 
-        createParticles();
+        // Start background animation
+        createBrokenHearts();
     </script>
 </body>
 </html>
